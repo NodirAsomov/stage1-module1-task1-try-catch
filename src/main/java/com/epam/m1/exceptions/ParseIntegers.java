@@ -23,24 +23,39 @@ public class ParseIntegers {
         Iterator<String> words = WORDS.iterator();
 
         int sum = 0;
-        String justWords = " ";
+        StringBuilder justWords = new StringBuilder();
+
         while (words.hasNext()) {
             String next = words.next();
-            int number = Integer.parseInt(next);
             try {
-                    justWords+=next;
-            }catch (NumberFormatException e){
-                sum+=number;
-
+                int number = Integer.parseInt(next);
+                sum += number;
+            }catch (NumberFormatException e) {
+                justWords.append(" ").append(next);
             }
-            System.out.println(justWords);
-            System.out.println(sum);
+        }
+        System.out.println("Sum is " + sum);
+        System.out.println("Just words:" + justWords);
 
 
         }
 
-        //System.out.println("Sum is " + sum);
-        //System.out.println("Just words:" + justWords);
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
